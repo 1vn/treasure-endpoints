@@ -9,4 +9,5 @@ function newcomment(){
 
 	$query="insert into itemcomments (useritemid, userid, comment, created_at) values ($useritemid, $userid, '$comment', $created_at)";
 	$rs=sql_query($query, $db);
+	echo json_encode(array('success'=>true));
 }
