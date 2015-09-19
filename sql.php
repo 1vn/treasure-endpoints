@@ -1,4 +1,4 @@
-<?
+<?php
 // Macronetic Hydra
 // Common SQL Interface
 // MySQL implementation

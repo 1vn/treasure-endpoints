@@ -1,4 +1,4 @@
-<?
+<?php
 
 function newcomment(){
 	global $db;

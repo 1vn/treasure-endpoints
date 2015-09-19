@@ -1,4 +1,4 @@
-<?
+<?php
 
 function getuserrating(){
 	global $db;

@@ -1,4 +1,4 @@
-<?
+<?php
 include "sql.php";
 include "auth.php";
 $db=sql_get_db('localhost','treasure',$dbuser,$dbpw);

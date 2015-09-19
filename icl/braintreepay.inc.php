@@ -1,4 +1,4 @@
-<?
+<?php
 
 function braintreepay(){
 	$nonce = $_POST["payment_method_nonce"];

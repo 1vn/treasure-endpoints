@@ -1,4 +1,4 @@
-<?
+<?php
 
 function newitem(){
 	global $db;
