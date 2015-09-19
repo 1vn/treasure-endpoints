@@ -16,5 +16,5 @@ switch($cmd){
 	case 'getlocalusers': include 'icl/getlocalusers.inc.php'; getlocalusers();break;
 	case 'braintreectoken':include 'icl/braintreectoken.inc.php';braintreectoken();break;
 	case 'braintreepay':include 'icl/braintreepay.inc.php';braintreepay();break;
-	default: 'unrecognized command '.$cmd;
+	default: die('unrecognized command '.$cmd;)
 }
