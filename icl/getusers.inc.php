@@ -23,6 +23,5 @@ function getusers(){
 		array_push($users, array("fname"=>$fname, "lname"=>$lname, "image"=>$image, "userid"=>$userid, "items"=>$items));
 	}
 
-	header("application/json");
 	echo json_encode($users);
 }
