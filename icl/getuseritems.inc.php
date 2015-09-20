@@ -23,16 +23,8 @@ function getuseritems(){
 			array_push($tags, $tagname);
 		}
 
-		$images=array();
-		$query="select * from itemimages where useritemid=$useritemid";
-		$rs2=sql_query($query, $db);
-		while($myrow2=$sql_fetch_assoc($rs2)){
-			$filename=$myrow2['filename'];
-			array_push($images, $filename);
-		}
-
-		$query="select * from itemimages where useritemid=$useritemid";
-		array_push($items, array("useritemid"=>$useritemid, "price"=>$price, "name"=>$name, "status"=>$status, "created_at"=>$created_at, "images"=>$images, "tags"=>$tags));
+		$image=$myrow['image'];
+		array_push($items, array("useritemid"=>$useritemid, "price"=>$price, "name"=>$name, "status"=>$status, "created_at"=>$created_at, "image"=>$image, "tags"=>$tags));
 	}
 	echo json_encode($items);
 
