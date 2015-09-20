@@ -1,4 +1,5 @@
 <?php
+phpinfo();
 
 include 'preheader.php';
 

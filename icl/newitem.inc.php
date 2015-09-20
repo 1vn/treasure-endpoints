@@ -1,4 +1,11 @@
 <?php
+define("PATH_SDK_ROOT", "v3-php-sdk-2.1.0/");
+define("POPO_CLASS_PATH", "v3-php-sdk-2.1.0/Data/");
+require_once('../config.php');
+require_once('v3-php-sdk-2.1.0/Core/ServiceContext.php');
+require_once('v3-php-sdk-2.1.0/DataService/DataService.php');
+require_once('v3-php-sdk-2.1.0/PlatformService/PlatformService.php');
+require_once('v3-php-sdk-2.1.0/Utility/Configuration/ConfigurationManager.php');
 
 function newitem(){
 	global $db;
@@ -22,6 +29,12 @@ function newitem(){
 			$rs=sql_query($query, $db);
 		}
 	}
+
+	if($_SESSION['secret']){
+		$reqbody=array();
+
+	}
+
   	$error=array();
     $extension=array("jpeg","jpg","png","gif");
 	if($_FILES['files']){

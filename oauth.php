@@ -1,6 +1,5 @@
 <?php 
 require_once("./config.php");
- 
 define('OAUTH_REQUEST_URL', 'https://oauth.intuit.com/oauth/v1/get_request_token');
 define('OAUTH_ACCESS_URL', 'https://oauth.intuit.com/oauth/v1/get_access_token');
 define('OAUTH_AUTHORISE_URL', 'https://appcenter.intuit.com/Connect/Begin');
@@ -13,7 +12,7 @@ if ( isset($_GET['start'] ) ) {
 }
  
 try {
-  $oauth = new OAuth( 'qyprdQBXpUravFxB3FXSWcRckuT2pM', '5y143KvipH4Hh8c8ZjVYWu1I4Ak4BFiJ0n6jCsYD', OAUTH_SIG_METHOD_HMACSHA1, OAUTH_AUTH_TYPE_URI);
+  $oauth = new OAuth( OAUTH_CONSUMER_KEY, OAUTH_CONSUMER_SECRET, OAUTH_SIG_METHOD_HMACSHA1, OAUTH_AUTH_TYPE_URI);
   $oauth->enableDebug();
   $oauth->disableSSLChecks(); //To avoid the error: (Peer certificate cannot be authenticated with given CA certificates)
   if (!isset( $_GET['oauth_token'] ) && !isset($_SESSION['token']) ){
