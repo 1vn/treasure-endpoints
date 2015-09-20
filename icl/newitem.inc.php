@@ -6,11 +6,12 @@ function newitem(){
 	$price=$_POST['price'];
 	$userid=$_POST['userid'];
 	$image=$_POST['image'];
+	$created_at=time();
 
 	if($_POST['tags']){
 		$tags=explode(',', $_POST['tags']);
 	}
-	$query="insert into useritems (name, price, userid, image) values ('$name', $price, $userid, '$image')";
+	$query="insert into useritems (name, price, userid, image, created_at) values ('$name', $price, $userid, '$image', $created_at)";
 	$rs=sql_query($query, $db);
 	$useritemid=sql_insert_id($db, $rs);
 

@@ -11,6 +11,7 @@ switch($cmd){
 	case 'newitem': include 'icl/newitem.inc.php'; newitem();break;
 	case 'getuserrating': include 'icl/getuserrating.inc.php'; getuserrating();break;
 	case 'getuseritems': include 'icl/getuseritems.inc.php'; getuseritems();break;
+	case 'getuseritem': include 'icl/getuseritem.inc.php'; getuseritem();break;
 	case 'getitemcomments': include 'icl/getitemcomments.inc.php'; getitemcomments();break;
 	case 'getallusersnear': include 'icl/getallusersnear.inc.php'; getallusersnear();break;
 	case 'updateitem': include 'icl/updateitem.inc.php'; updateitem();break;
