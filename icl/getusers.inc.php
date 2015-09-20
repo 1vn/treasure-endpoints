@@ -1,4 +1,4 @@
-<?
+<?php
 
 function getusers(){
 	global $db;
