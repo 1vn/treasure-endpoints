@@ -17,7 +17,7 @@ function getusercomments(){
 		$commenterlname=$myrow1['lname'];
 		$commenterpic=$myrow1['image'];
 		$created_at=$myrow["created_at"];
-		array_push($comments, array("commenterid"=>$commenterid, "comment"=>$comment, "fname"=>$commenterfname, "lname"=>$commenterlname, "created_at"=>$created_at));
+		array_push($comments, array("commenterid"=>$commenterid, "comment"=>$comment, "fname"=>$commenterfname, "lname"=>$commenterlname, "created_at"=>$created_at, "image"=>$commenterpic));
 	}
 
 	echo json_encode(array($comments));
