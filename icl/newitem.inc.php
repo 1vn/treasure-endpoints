@@ -5,12 +5,13 @@ function newitem(){
 	$name=$_POST['name'];
 	$price=$_POST['price'];
 	$userid=$_POST['userid'];
-	$image=$_POST['image'];
+
+	print_r($_POST);
 
 	if($_POST['tags']){
 		$tags=explode(',', $_POST['tags']);
 	}
-	$query="insert into useritems (name, price, userid, image) values ('$name', $price, $userid, '$image')";
+	$query="insert into useritems (name, price, userid) values ('$name', $price, $userid)";
 	$rs=sql_query($query, $db);
 	$useritemid=sql_insert_id($db, $rs);
 
@@ -20,9 +21,6 @@ function newitem(){
 			$rs=sql_query($query, $db);
 		}
 	}
-
-
-	/*
   	$error=array();
     $extension=array("jpeg","jpg","png","gif");
 	if($_FILES['files']){
@@ -46,5 +44,4 @@ function newitem(){
             }
 		}
 	}
-	*/
 }
