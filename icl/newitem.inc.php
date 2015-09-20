@@ -14,12 +14,12 @@ function newitem(){
 	$userid=$_POST['userid'];
 	$image=$_POST['image'];
 	$created_at=time();
-	$desc=$_POST['desc'];
+	$description=$_POST['description'];
 
 	if($_POST['tags']){
 		$tags=explode(',', $_POST['tags']);
 	}
-	$query="insert into useritems (name, price, userid, image, created_at, desc) values ('$name', $price, $userid, '$image', $created_at, '$desc')";
+	$query="insert into useritems (name, price, userid, image, created_at, description) values ('$name', $price, $userid, '$image', $created_at, '$description')";
 	$rs=sql_query($query, $db);
 	$useritemid=sql_insert_id($db, $rs);
 
@@ -39,7 +39,7 @@ function newitem(){
 		$dataService = new DataService($serviceContext);
 		$itemObj = new IPPitem();
 		$itemObj->Name = $name;
-		$itemObj->Desc = $desc;
+		$itemObj->Desc = $description;
 		$itemObj->Price = $price;
 		$itemObj->Id=$useritemid;
 		$itemObj->Img=$image;
