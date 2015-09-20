@@ -6,7 +6,7 @@ function newitem(){
 	$price=$_POST['price'];
 	$userid=$_POST['userid'];
 
-	$tags=explode(',', POSTSTR('tags'));
+	$tags=explode(',', $_POST['tags']);
 
 	$query="insert into useritems (itemname, price, userid) values ('$itemname', $price, $userid)";
 	$rs=sql_query($query, $db);
