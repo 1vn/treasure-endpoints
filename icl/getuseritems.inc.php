@@ -8,7 +8,7 @@ function getuseritems(){
 	$rs=sql_query($query, $db);
 	$items=array();
 	while($myrow=sql_fetch_assoc($rs)){
-		$useritemsid=$myrow['useritemsid'];
+		$useritemid=$myrow['useritemid'];
 		$price=$myrow['price']+0;
 		$name=$myrow['name'];
 		$status=$myrow['status'];
@@ -16,7 +16,7 @@ function getuseritems(){
 		$created_at=$myrow['created_at']+0;
 
 		$tags=array();
-		$query="select * from itemtags where useritemsid=$useritemsid";
+		$query="select * from itemtags where useritemid=$useritemid";
 		$rs1=sql_query($query, $db);
 		while($myrow1=$sql_fetch_assoc($rs1)){
 			$tagname=$myrow1['tagname'];
@@ -24,7 +24,7 @@ function getuseritems(){
 		}
 
 		$image=$myrow['image'];
-		array_push($items, array("useritemsid"=>$useritemsid, "price"=>$price, "name"=>$name, "status"=>$status, "created_at"=>$created_at, "image"=>$image, "tags"=>$tags));
+		array_push($items, array("useritemid"=>$useritemid, "price"=>$price, "name"=>$name, "status"=>$status, "created_at"=>$created_at, "image"=>$image, "tags"=>$tags));
 	}
 	echo json_encode($items);
 
