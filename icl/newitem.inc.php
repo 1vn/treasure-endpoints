@@ -32,6 +32,13 @@ function newitem(){
 
 	if($_SESSION['secret']){
 		$reqbody=array();
+		$requestValidator = new OAuthRequestValidator($_SESSION[], '', '', '');
+		$realmid="405202781";
+		$serviceType= IntuitServicesType::QBD;
+		$serviceContext = new ServiceContext($realmId, $serviceType, $requestValidator);
+		$dataService = new DataService($serviceContext);
+		$entities = $dataService->Query("SELECT * FROM Customer");
+		echo $entities;
 
 	}
 
