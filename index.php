@@ -3,6 +3,7 @@
 include 'preheader.php';
 
 $cmd=$_GET['cmd'];
+if(!$cmd)$cmd=$_POST['cmd'];
 
 switch($cmd){
 	case 'newuser': include 'icl/newuser.inc.php'; newuser();break;
