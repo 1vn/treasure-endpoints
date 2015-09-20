@@ -26,6 +26,4 @@ function getuseritems(){
 		$image=$myrow['image'];
 		array_push($items, array("useritemid"=>$useritemid, "price"=>$price, "name"=>$name, "status"=>$status, "created_at"=>$created_at, "image"=>$image, "tags"=>$tags));
 	}
-	echo json_encode($items);
-
 }
