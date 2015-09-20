@@ -15,6 +15,7 @@ function getusercomments(){
 		$myrow1=sql_fetch_assoc($rs1);
 		$commenterfname=$myrow1['fname'];
 		$commenterlname=$myrow1['lname'];
+		$commenterpic=$myrow1['image'];
 		$created_at=$myrow["created_at"];
 		array_push($comments, array("commenterid"=>$commenterid, "comment"=>$comment, "fname"=>$commenterfname, "lname"=>$commenterlname, "created_at"=>$created_at));
 	}
