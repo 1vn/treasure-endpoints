@@ -20,5 +20,5 @@ function getusercomments(){
 		array_push($comments, array("commenterid"=>$commenterid, "comment"=>$comment, "fname"=>$commenterfname, "lname"=>$commenterlname, "created_at"=>$created_at, "image"=>$commenterpic));
 	}
 
-	echo json_encode(array($comments));
+	echo json_encode($comments);
 }
