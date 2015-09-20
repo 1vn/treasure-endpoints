@@ -1,5 +1,5 @@
 <?php 
-require_once("./config.php");
+require_once("config.php");
 define('OAUTH_REQUEST_URL', 'https://oauth.intuit.com/oauth/v1/get_request_token');
 define('OAUTH_ACCESS_URL', 'https://oauth.intuit.com/oauth/v1/get_access_token');
 define('OAUTH_AUTHORISE_URL', 'https://appcenter.intuit.com/Connect/Begin');
@@ -28,7 +28,7 @@ try {
     $oauth->setToken($_GET['oauth_token'], $_SESSION['secret']);
 		$access_token = $oauth->getAccessToken( OAUTH_ACCESS_URL );
 		
-		$_SESSION['token'] = serialize( $access_token );
+	$_SESSION['token'] = serialize( $access_token );
     $_SESSION['realmId'] = $_REQUEST['realmId'];  // realmId is legacy for customerId
     $_SESSION['dataSource'] = $_REQUEST['dataSource'];
 	
