@@ -1,6 +1,7 @@
 <?
 
 function getuseritem(){
+	global $db;
 	$useritemid=$_GET['useritemid'];
 	$query="select * from useritems where useritemid=$useritemid";
 	$rs=sql_query($query, $db);
