@@ -18,7 +18,7 @@ function newitem(){
 			$rs=sql_query($query, $db);
 		}
 	}
-  	
+  	echo "1";
   	$error=array();
     $extension=array("jpeg","jpg","png","gif");
 	if($_FILES['files']){
@@ -31,6 +31,7 @@ function newitem(){
                     $newFileName=$useritemid.".".$ext;
                     move_uploaded_file($file_tmp=$_FILES["files"]["tmp_name"][$key],"itemimages/".$newFileName);
                		$query="insert into itemimages (useritemid, filename) values ($useritemid, '$newFileName')";
+  					echo "2";
                		$rs=sql_query($query, $db);
                 } else{
                     $filename=basename($file_name,$ext);
@@ -40,6 +41,7 @@ function newitem(){
                 	$rs=sql_query($query, $db);
                 	$query="insert into itemimages (useritemid, filename) values ($useritemid, '$newFileName')";
                 	$rs=sql_query($query, $db);
+  					echo "3";
                 }
 			}
 		}
