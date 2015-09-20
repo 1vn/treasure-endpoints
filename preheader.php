@@ -1,3 +1,3 @@
 <?php
 include 'connect.php';
-include 'forminput.php';
+//include 'forminput.php';
