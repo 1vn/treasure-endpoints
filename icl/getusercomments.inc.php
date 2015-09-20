@@ -10,7 +10,7 @@ function getusercomments(){
 	while($myrow=sql_fetch_assoc($rs)){
 		$commenterid=$myrow['commenterid'];
 		$comment=$myrow['comment'];
-		$query="select * from users where userid=$userid";
+		$query="select * from users where userid=$commenterid";
 		$rs1=sql_query($query, $db);
 		$myrow1=sql_fetch_assoc($rs1);
 		$commenterfname=$myrow1['fname'];
