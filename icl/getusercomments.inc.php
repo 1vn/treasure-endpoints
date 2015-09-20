@@ -2,7 +2,7 @@
 
 function getusercomments(){
 	global $db;
-	$useritemid=(int)$_GET['userid'];
+	$userprofileid=(int)$_GET['userid'];
 
 	$query="select * from userprofilecomments where userprofileid=$userprofileid";
 	$rs=sql_query($query, $db);
