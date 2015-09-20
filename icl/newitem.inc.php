@@ -2,13 +2,16 @@
 
 function newitem(){
 	global $db;
-	$itemname=$_POST['itemname'];
+	$name=$_POST['name'];
 	$price=$_POST['price'];
 	$userid=$_POST['userid'];
 
-	$tags=explode(',', $_POST['tags']);
+	print_r($_POST);
 
-	$query="insert into useritems (itemname, price, userid) values ('$itemname', $price, $userid)";
+	if($_POST['tags']){
+		$tags=explode(',', $_POST['tags']);
+	}
+	$query="insert into useritems (name, price, userid) values ('$name', $price, $userid)";
 	$rs=sql_query($query, $db);
 	$useritemid=sql_insert_id($db, $rs);
 
@@ -18,7 +21,6 @@ function newitem(){
 			$rs=sql_query($query, $db);
 		}
 	}
-  	echo "1";
   	$error=array();
     $extension=array("jpeg","jpg","png","gif");
 	if($_FILES['files']){
@@ -46,6 +48,4 @@ function newitem(){
 			}
 		}
 	}
-
-	echo json_encode(array('success'=>true));
 }
