@@ -33,11 +33,16 @@ function newitem(){
 	if($_SESSION['secret']){
 		$reqbody=array();
 		$requestValidator = new OAuthRequestValidator($_SESSION[], '', '', '');
-		$realmid="405202781";
+		$realmid=$_SESSION['realmId'];
 		$serviceType= IntuitServicesType::QBD;
 		$serviceContext = new ServiceContext($realmId, $serviceType, $requestValidator);
 		$dataService = new DataService($serviceContext);
-		$entities = $dataService->Query("SELECT * FROM Customer");
+		$itemObj = new IPPitem();
+		$itemObj->Name = $name;
+		$itemObj->Desc = $desc;
+		$itemObj->Price = $price;
+		$itemObj->Id=$useritemid;
+		$itemObj->Img=$image;
 		echo $entities;
 
 	}
