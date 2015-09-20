@@ -2,9 +2,9 @@
 
 function getusercomments(){
 	global $db;
-	$userprofileid=(int)$_GET['userid'];
+	$userid=(int)$_GET['userid'];
 
-	$query="select * from userprofilecomments where userprofileid=$userprofileid";
+	$query="select * from userprofilecomments where userid=$userid";
 	$rs=sql_query($query, $db);
 	$comments=array();
 	while($myrow=sql_fetch_assoc($rs)){
@@ -20,5 +20,5 @@ function getusercomments(){
 		array_push($comments, array("commenterid"=>$commenterid, "comment"=>$comment, "fname"=>$commenterfname, "lname"=>$commenterlname, "created_at"=>$created_at));
 	}
 
-	echo json_encode($comments);
+	echo json_encode(array($comments));
 }
