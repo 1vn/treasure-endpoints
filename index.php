@@ -15,6 +15,7 @@ switch($cmd){
 	case 'getuseritem': include 'icl/getuseritem.inc.php'; getuseritem();break;
 	case 'getusercomments': include 'icl/getusercomments.inc.php'; getusercomments();break;
 	case 'getallusersnear': include 'icl/getallusersnear.inc.php'; getallusersnear();break;
+	case 'getusers': include 'icl/getusers.inc.php'; getusers();break;
 	case 'updateitem': include 'icl/updateitem.inc.php'; updateitem();break;
 	case 'deleteitem': include 'icl/deleteitem.inc.php'; deleteitem();break;
 	case 'getlocalusers': include 'icl/getlocalusers.inc.php'; getlocalusers();break;
