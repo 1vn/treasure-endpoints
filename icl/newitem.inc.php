@@ -12,9 +12,11 @@ function newitem(){
 	$rs=sql_query($query, $db);
 	$useritemid=sql_insert_id($db, $rs);
 
-	foreach($tags as $tag){
-		$query="insert into itemtags (useritemid, tagname) values ($useritemid, $tag)";
-		$rs=sql_query($query, $db);
+	if($tags){
+		foreach($tags as $tag){
+			$query="insert into itemtags (useritemid, tagname) values ($useritemid, $tag)";
+			$rs=sql_query($query, $db);
+		}
 	}
   	
   	$error=array();
