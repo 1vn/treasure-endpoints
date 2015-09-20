@@ -18,7 +18,7 @@ function getuseritems(){
 		$tags=array();
 		$query="select * from itemtags where useritemid=$useritemid";
 		$rs1=sql_query($query, $db);
-		while($myrow1=$sql_fetch_assoc($rs1)){
+		while($myrow1=sql_fetch_assoc($rs1)){
 			$tagname=$myrow1['tagname'];
 			array_push($tags, $tagname);
 		}
